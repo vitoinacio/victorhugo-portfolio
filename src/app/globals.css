@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --vscode-bg: #1e1e1e;
+  --vscode-sidebar: #252526;
+  --vscode-activity: #333333;
+  --vscode-text: #cccccc;
+  --vscode-accent: #007acc;
+  --vscode-highlight: #264f78;
+  --vscode-border: #3c3c3c;
+}
+
+@theme inline {
+  --color-background: var(--vscode-bg);
+  --color-foreground: var(--vscode-text);
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans: var(--font-jetbrains-mono), ui-sans-serif, system-ui, sans-serif;
+  
+  --color-vscode-bg: var(--vscode-bg);
+  --color-vscode-sidebar: var(--vscode-sidebar);
+  --color-vscode-activity: var(--vscode-activity);
+  --color-vscode-text: var(--vscode-text);
+  --color-vscode-accent: var(--vscode-accent);
+  --color-vscode-highlight: var(--vscode-highlight);
+  --color-vscode-border: var(--vscode-border);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* IDE feels like a native app, no body scroll */
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(121, 121, 121, 0.3);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(121, 121, 121, 0.6);
+  }
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(121, 121, 121, 0.3) transparent;
+  }
+}
